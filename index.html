@@ -1,0 +1,495 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>상하이 2026 4개국 대조표</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one 1120px reading column; selection timeline first, then the confirmed comparison tables and sources. */
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --fg:#1b1f27; --muted:#5b6475; --line:#dde1e8; --soft:#eef1f5;
+  --accent:#2446b8;
+  --kr:#2f5fd0; --cn:#c8402c; --jp:#8250c4; --fr:#0f8a6c; --wire:#b7bfcc; --sup:#b07d16; --ply:#2f8f5b;
+    --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12151b; --surface:#1a1e26; --fg:#e7eaf0; --muted:#9aa3b4; --line:#2c323d; --soft:#20252e;
+  --accent:#8aa6ff; --kr:#6f97ff; --cn:#ff7d68; --jp:#b88cff; --fr:#3fcca5; --wire:#4a5260; --sup:#e0b24f; --ply:#5fcf93;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12151b; --surface:#1a1e26; --fg:#e7eaf0; --muted:#9aa3b4; --line:#2c323d; --soft:#20252e;
+  --accent:#8aa6ff; --kr:#6f97ff; --cn:#ff7d68; --jp:#b88cff; --fr:#3fcca5; --wire:#4a5260; --sup:#e0b24f; --ply:#5fcf93;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.65;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px;padding-block:40px 72px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:30px;font-weight:700;letter-spacing:-.01em}
+h2{font-size:21px;font-weight:700}
+h3{font-size:16px;font-weight:600}
+p{margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{max-width:68ch;color:var(--muted);margin-top:10px}
+header{display:flex;flex-direction:column;gap:8px;border-bottom:1px solid var(--line);padding-bottom:28px}
+.files{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.file{display:flex;gap:8px;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:6px 10px;font-size:13px}
+.file b{font-family:var(--f-mono);color:var(--accent)}
+section{display:flex;flex-direction:column;gap:18px}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.sec-head p{color:var(--muted);max-width:72ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-weight:600;font-size:13px;background:var(--soft);color:var(--muted);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+/* timeline */
+.tl-legend{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted)}
+.tl-legend span{display:inline-flex;align-items:center;gap:6px}
+.tl svg{display:block;min-width:900px;width:100%;height:auto}
+.tl text{font-family:var(--f-body)}
+.ax{fill:var(--muted);font-size:11px;font-family:var(--f-mono)}
+.grid{stroke:var(--line);stroke-width:1}
+.lane-lbl{fill:var(--fg);font-size:13px;font-weight:700}
+.ev-lbl{fill:var(--fg);font-size:11px}
+.ev-sub{fill:var(--muted);font-size:10px;font-family:var(--f-mono)}
+.comp{fill:var(--soft)}
+.comp-lbl{fill:var(--muted);font-size:11px;font-weight:600}
+.lead{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.lead div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;border-top:3px solid var(--c)}
+.lead .n{font-family:var(--f-mono);font-size:24px;font-variant-numeric:tabular-nums}
+.lead .n small{font-size:13px;color:var(--muted)}
+.lead p{font-size:13px;color:var(--muted)}
+.note{font-size:13px;color:var(--muted);max-width:80ch}
+/* reconciled tables */
+.cmp td:first-child{font-weight:600;white-space:nowrap;min-width:110px}
+.cmp td{min-width:200px}
+.cmp th .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:6px}
+.cmp td small{color:var(--muted)}
+.ref{font-family:var(--f-mono);font-size:11px;color:var(--accent);text-decoration:none;white-space:nowrap}
+.ref:hover{text-decoration:underline}
+ol.sources{margin:0;padding-left:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:6px 24px;font-size:13px}
+ol.sources li{display:flex;gap:8px;min-width:0}
+ol.sources li b{font-family:var(--f-mono);font-weight:500;color:var(--accent);flex:none;width:30px}
+ol.sources li span{min-width:0;overflow-wrap:anywhere}
+.bl{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:5px}
+.bl li{padding-left:2px;line-height:1.55}
+.bl li::marker{color:var(--muted)}
+/* flags + org charts */
+.flag{display:inline-block;width:21px;height:14px;vertical-align:-2px;margin-right:6px;border-radius:2px;box-shadow:0 0 0 1px var(--line);flex:none}
+.cmp th{vertical-align:middle}
+.lead h3{display:flex;align-items:center}
+.orgs{display:flex;flex-direction:column;gap:14px;margin-bottom:6px}
+.org{background:var(--surface);border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column}
+.org-head{display:flex;align-items:center;gap:4px;padding:10px 14px;border-bottom:1px solid var(--line);font-weight:600;flex-wrap:wrap}
+.org-head small{font-weight:400;color:var(--muted);margin-left:auto;font-size:12px}
+.org-body{overflow-x:auto;padding:18px 12px 20px}
+.org-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted)}
+.org-legend span{display:inline-flex;align-items:center;gap:6px}
+.org-legend i{width:14px;height:10px;border-radius:2px;display:inline-block}
+.tree,.tree ul{margin:0;padding:0;display:flex;justify-content:center}
+.tree{width:max-content;margin-inline:auto}
+.tree ul{padding-top:18px;position:relative}
+.tree li{list-style:none;position:relative;padding:18px 5px 0;display:flex;flex-direction:column;align-items:center}
+.tree > li{padding-top:0}
+.tree li::before,.tree li::after{content:"";position:absolute;top:0;right:50%;width:50%;height:18px;border-top:1.5px solid var(--wire)}
+.tree li::after{right:auto;left:50%;border-left:1.5px solid var(--wire)}
+.tree li:only-child::before,.tree li:only-child::after,.tree > li::before,.tree > li::after{display:none}
+.tree li:only-child{padding-top:0}
+.tree li:first-child::before,.tree li:last-child::after{border:0}
+.tree li:last-child::before{border-right:1.5px solid var(--wire);border-radius:0 6px 0 0}
+.tree li:first-child::after{border-radius:6px 0 0 0}
+.tree ul::before{content:"";position:absolute;top:0;left:50%;height:18px;border-left:1.5px solid var(--wire)}
+.node{width:176px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--k);border-radius:6px;padding:7px 9px;display:flex;flex-direction:column;gap:2px;text-align:left}
+.node b{font-size:13px;font-weight:600;line-height:1.35}
+.node span{font-size:11.5px;color:var(--muted);line-height:1.45}
+.node em{font-style:normal;font-family:var(--f-mono);font-size:10.5px;color:var(--muted)}
+.k-org{--k:var(--muted)}
+.k-coach{--k:var(--c)}
+.k-sup{--k:var(--sup)}
+.k-ply{--k:var(--ply)}
+.node.group{border-style:dashed;border-left-style:solid;background:var(--soft)}
+.org-note{font-size:12.5px;color:var(--muted);padding:0 14px 12px}
+@media (max-width:560px){h1{font-size:24px}.wrap{padding-inline:16px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">WorldSkills Shanghai 2026 · 한국 · 중국 · 일본 · 프랑스</div>
+  <h1>국가대표 선발·코치·훈련 4개국 비교</h1>
+  <p class="lede">세 비교 문서의 차이를 각국 공식 원문으로 다시 확인해 확정한 내용만 남겼습니다. 원문에서 찾을 수 없는 서술은 뺐습니다. 기준일은 2026년 10월 7일입니다.</p>
+</header>
+
+<section id="timeline">
+  <div class="sec-head">
+    <div class="eyebrow">1 · 선발 시기</div>
+    <h2>국가대표 선발 타임라인</h2>
+    <p>2025년 3월부터 상하이 대회 경기 첫날(2026.9.23)까지입니다. 막대는 기간, 원은 단일 일정, 마름모는 최종 대표 확정 시점입니다.</p>
+  </div>
+  <div class="tl-legend">
+    <span><svg width="22" height="10" aria-hidden="true"><rect x="0" y="2" width="22" height="6" rx="3" fill="var(--muted)"/></svg>기간 (평가전·훈련)</span>
+    <span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="var(--surface)" stroke="var(--muted)" stroke-width="2"/></svg>일정·발표</span>
+    <span><svg width="14" height="14" aria-hidden="true"><path d="M7 1 L13 7 L7 13 L1 7Z" fill="var(--muted)"/></svg>최종 대표 확정</span>
+  </div>
+  <div class="scroll tl"><svg id="tl" viewBox="0 0 1080 560" role="img" aria-label="한국, 중국, 일본, 프랑스의 상하이 2026 국가대표 선발 일정 타임라인"></svg></div>
+  <div class="lead" id="lead"></div>
+  <p class="note">대회까지 남은 기간은 최종 확정일부터 2026.9.23까지를 계산한 값입니다. 한국은 일반 30직종(2차 평가전 2025.6.9~7.5)과 공모 12직종(2차 선발전 2025.8월)의 확정 시점이 달라 범위로 적었습니다. 중국은 확정이 가장 늦지만, 681명 집훈팀이 2026년 1월 하순부터 이미 훈련하고 있었습니다.</p>
+</section>
+
+<section id="reconciled">
+  <div class="sec-head">
+    <div class="eyebrow">2 · 비교</div>
+    <h2>선수 · 코치진 · 훈련</h2>
+    <p>셀 끝의 코드는 아래 출처 목록의 원문으로 연결됩니다.</p>
+  </div>
+  <div id="cmp"></div>
+</section>
+
+<section id="sources">
+  <div class="sec-head">
+    <div class="eyebrow">3 · 출처</div>
+    <h2>원문 출처</h2>
+  </div>
+  <ol class="sources" id="srcs"></ol>
+</section>
+
+</div>
+
+<script>
+const SRC = {
+  K0:["「기능경기대회 관리규칙」 일부개정 전문 (최종개정 2026.1.6, 사용자 제공 PDF)",null],
+  K1:["한국산업인력공단, 상하이 국가대표 평가전 일정 공지 (2025.3.14)","https://meister.hrdkorea.or.kr/bbs/5/1/1/20160429084837254100_view.do?article_id=20250314095256411100"],
+  K2:["한국위원회, 2026 상하이 국가대표 선발전(공모직종) 공고 (2025.5.12)","https://architecture.snu.ac.kr/wp-content/uploads/2025/05/20250527_002114.pdf"],
+  K3:["고용노동부 결단식 자료, 50직종 56명 (2026.8.11)","https://eiec.kdi.re.kr/policy/materialView.do?num=287458&pg=1&pp=20&topic=P"],
+  K4:["헤럴드경제, 국제지도위원 50·통역 50 (2026.8.10)","https://www.heraldk.com/article/2026081023302415310"],
+  K5:["WorldSkills International, Korea 회원 페이지 (49직종 54명 표기)","https://worldskills.org/members/korea/"],
+  K6:["뉴스서울, 2024 국가대표 훈련 스케치 (합숙·친선경기)","https://newsseoul.co.kr/news/view/1065583216413988"],
+  K7:["전자신문, 상하이 결과 종합 2위, 50직종 56명 (2026.9.28)","https://m.etnews.com/20260928000353"],
+  C1:["제3회 전국직업기능대회 기자회견: 개인 상위10·팀 상위5 (2025.6.30)","https://worldskills2026.com.cn/release/1524/"],
+  C2:["681명 국가집훈팀 공고 (2025.11.25)","https://chinajob.mohrss.gov.cn/h5/c/2025-12-04/467839.shtml"],
+  C3:["《第48届世界技能大赛参赛集训工作指导意见》 (2026.1.30)","https://worldskills2026.com.cn/release/2878/"],
+  C4:["국가집훈 개시, 253기관·375기지 (2026.3.24)","https://worldskills2026.com.cn/release/2957/"],
+  C5:["정선수 71·예비 71 명단 발표 (2026.5.13)","https://worldskills2026.com.cn/release/3167/"],
+  C6:["《世界技能大赛参赛管理暂行办法》 (2013)","https://www.gov.cn/gongbao/content/2013/content_2449505.htm"],
+  C7:["상하이시 인사국, 집중평가 2026.4.10~13 통지 (沪人社职〔2026〕80号)","https://www.shanghai.gov.cn/gwk/search/content/t0035_1439672"],
+  C8:["China Daily, 집훈기지 훈련 현장 (2026.6.2)","https://cn.chinadaily.com.cn/a/202606/02/WS6a1e9d7ca310942cc49afafd.html"],
+  C9:["상하이시, 중국 대표단 220명 발표 (2026.8.24)","https://english.shanghai.gov.cn/en-WorldSkills2026Latest/20260824/4a8d061a78c848b996630b7cec935f9c.html"],
+  J1:["JAVADA, 상하이 대표선수 선고방침 (2025.4.1)","https://www.javada.or.jp/jigyou/gino/kokusai/48/shanghai_senkouhousin20250401r.pdf"],
+  J2:["후생노동성, CNC 선반·밀링 대표 선발전 (2025.9.9)","https://www.mhlw.go.jp/stf/newpage_62861.html"],
+  J3:["후생노동성, 대표선수 결정 57직종 64명 (2026.1.27)","https://www.mhlw.go.jp/stf/newpage_68613.html"],
+  J4:["후생노동성, 경기력 강화·인재육성 지침 (2025.3.31)","https://www.mhlw.go.jp/content/11806001/001460834.pdf"],
+  J5:["후생노동성, 일본 선수단 성적 56직종 62명 (2026.9.29)","https://www.mhlw.go.jp/stf/newpage_76044.html"],
+  J6:["JAVADA, 대표선수·엑스퍼트 명단","https://www.javada.or.jp/jigyou/gino/kokusai/48/48_competitors.html"],
+  J7:["후생노동성, 제63회 전국대회 개요 (2025.10.17~20, 42직종)","https://waza.mhlw.go.jp/info/2025/0919-63101720.html"],
+  F1:["WorldSkills France, 상하이 대표팀 발표 보도자료 (2025.12.15)","https://www.worldskills-france.org/app/uploads/2026/01/CP-titularisation-EDFM-Shanghai-26-2.pdf"],
+  F2:["WorldSkills France, Devenez un expert métier","https://www.worldskills-france.org/sengager/devenez-un-expert-metier/"],
+  F3:["WorldSkills France, 전국결선 보도자료 (마르세유 2025.10.15~18)","https://www.worldskills-france.org/app/uploads/2025/10/DP-CNAT25-15.10.25.pdf"],
+  F4:["UIMM Lorraine, 전국결선 결과: 금메달리스트 대표팀 예비선발 (2025.10.20)","https://www.formation-industries-lorraine.com/UserFiles/File/cp-competition-nationale-des-metiers-2025-marseille-resultats.pdf"],
+  F5:["WorldSkills France, Programme Expert 2025 (40일·280시간)","https://www.worldskills-france.org/app/uploads/2024/12/Programme-Expert-2025.pdf"],
+  F6:["WorldSkills France, Préparation et entraînement","https://www.worldskills-france.org/la-competition/participer-a-la-competition/preparation-et-entrainement/"],
+  F7:["Zepros, 상하이 프랑스 대표팀: 메달 후 3주 선발","https://artisans-entrepreneurs.zepros.fr/actualites/voici-equipe-france-qualifiee-worldskills-shangai-2026"],
+  W1:["WorldSkills International, Competition Rules v11.0 §6.1.2 (연령)","https://api.worldskills.org/resources/download/3745/31383/32437?l=en"]
+};
+const ref = k => `<a class="ref" href="${SRC[k][1]||'#sources'}"${SRC[k][1]?' target="_blank" rel="noopener"':''}>[${k}]</a>`;
+const refs = ks => ks.map(ref).join(' ');
+
+// national flags, drawn on a 30x20 grid
+function starPath(cx,cy,r,rot){
+  let d='';for(let i=0;i<10;i++){const rr=i%2?r*0.382:r;const a=rot+i*Math.PI/5;d+=(i?'L':'M')+(cx+rr*Math.cos(a)).toFixed(2)+','+(cy+rr*Math.sin(a)).toFixed(2)}
+  return d+'Z';
+}
+function flagInner(code){
+  if(code==='fr') return '<rect width="10" height="20" fill="#0055A4"/><rect x="10" width="10" height="20" fill="#FFFFFF"/><rect x="20" width="10" height="20" fill="#EF4135"/>';
+  if(code==='jp') return '<rect width="30" height="20" fill="#FFFFFF"/><circle cx="15" cy="10" r="6" fill="#BC002D"/>';
+  if(code==='cn'){
+    let g='<rect width="30" height="20" fill="#EE1C25"/>';
+    g+=`<path d="${starPath(5,5,3,-Math.PI/2)}" fill="#FFFF00"/>`;
+    [[10,2],[12,4],[12,7],[10,9]].forEach(([x,y])=>{const a=Math.atan2(5-y,5-x);g+=`<path d="${starPath(x,y,1,a)}" fill="#FFFF00"/>`});
+    return g;
+  }
+  // kr
+  const t=33.69*Math.PI/180;
+  let g='<rect width="30" height="20" fill="#FFFFFF"/><g transform="rotate(33.69 15 10)"><circle cx="15" cy="10" r="5" fill="#0047A0"/><path d="M10,10 A5,5 0 0 1 20,10 A2.5,2.5 0 0 1 15,10 A2.5,2.5 0 0 0 10,10Z" fill="#CD2E3A"/></g>';
+  const tri=[[Math.PI+t,[1,1,1]],[-t,[0,1,0]],[Math.PI-t,[1,0,1]],[t,[0,0,0]]];
+  tri.forEach(([th,bars])=>{
+    const cx=15+8.4*Math.cos(th), cy=10+8.4*Math.sin(th), rot=th*180/Math.PI-90;
+    let b='';bars.forEach((solid,i)=>{const y=-1.4+i*1.4-0.4;
+      b+= solid?`<rect x="-2.1" y="${y}" width="4.2" height="0.8"/>`:`<rect x="-2.1" y="${y}" width="1.8" height="0.8"/><rect x="0.3" y="${y}" width="1.8" height="0.8"/>`});
+    g+=`<g fill="#000000" transform="translate(${cx.toFixed(2)} ${cy.toFixed(2)}) rotate(${rot.toFixed(2)})">${b}</g>`;
+  });
+  return g;
+}
+const FLAG_NAME={kr:'태극기',cn:'중국 국기',jp:'일본 국기',fr:'프랑스 국기'};
+const flag = code => `<svg class="flag" viewBox="0 0 30 20" role="img" aria-label="${FLAG_NAME[code]}">${flagInner(code)}</svg>`;
+
+// timeline
+const svg = document.getElementById('tl');
+const NS='http://www.w3.org/2000/svg';
+const L=150, R=1060, start=new Date(2025,2,1), end=new Date(2026,9,1);
+const X = d => L + (d - start)/(end - start)*(R-L);
+const D = s => {const [y,m,dd]=s.split('-').map(Number);return new Date(y,m-1,dd||1)};
+const el=(tag,attrs,txt)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e};
+const T0=40, laneH=125;
+// competition band
+el('rect',{x:X(D('2026-09-22')),y:T0-10,width:X(D('2026-09-28'))-X(D('2026-09-22')),height:laneH*4+10,class:'comp'});
+el('text',{x:X(D('2026-09-22'))-4,y:T0+laneH*4+16,'text-anchor':'end',class:'comp-lbl'},'상하이 대회 9.22~27');
+// month grid
+for(let d=new Date(start); d<=end; d.setMonth(d.getMonth()+1)){
+  const x=X(d), m=d.getMonth()+1;
+  el('line',{x1:x,x2:x,y1:T0-10,y2:T0+laneH*4,class:'grid','stroke-dasharray':m===1?'':'2 4'});
+  el('text',{x:x,y:T0-16,'text-anchor':'middle',class:'ax'}, m===1||(d.getFullYear()===2025&&m===3)?`${d.getFullYear()}.${m}`:String(m));
+}
+const LANES=[
+ {name:"한국",code:"kr",c:"var(--kr)",ev:[
+   {t:"pt",d:"2025-03-14",l:"평가전 일정 공지",r:1},
+   {t:"bar",a:"2025-04-26",b:"2025-05-29",l:"일반 30직종 1차 평가전",r:0,o:-5},
+   {t:"bar",a:"2025-06-09",b:"2025-07-05",l:"2차 평가전",r:1,o:-5},
+   {t:"bar",a:"2025-07-01",b:"2025-08-31",l:"공모 12직종 1·2차 선발전",r:2,o:5,op:.45},
+   {t:"fin",d:"2025-07-05",l:"대표 확정 (직종별, 2025.6~8)",r:3},
+   {t:"pt",d:"2026-08-11",l:"결단식 50직종 56명",r:0}]},
+ {name:"중국",code:"cn",c:"var(--cn)",ev:[
+   {t:"bar",a:"2025-09-20",b:"2025-09-22",l:"전국직업기능대회 (정저우)",r:0},
+   {t:"pt",d:"2025-11-25",l:"집훈팀 681명 공고",r:1},
+   {t:"bar",a:"2026-01-25",b:"2026-04-09",l:"기초훈련",r:2},
+   {t:"fin",d:"2026-04-13",l:"집중평가 4.10~13 → 정·예비",r:3},
+   {t:"pt",d:"2026-05-13",l:"명단 발표 71+71",r:0},
+   {t:"bar",a:"2026-04-14",b:"2026-09-15",l:"강화훈련 (예비선수 동반)",r:1,op:.45}]},
+ {name:"일본",code:"jp",c:"var(--jp)",ev:[
+   {t:"pt",d:"2025-03-31",l:"강화지침 발표",r:0},
+   {t:"pt",d:"2025-04-01",l:"선고방침",r:1},
+   {t:"bar",a:"2025-09-30",b:"2025-10-02",l:"CNC 별도 선발전",r:2},
+   {t:"bar",a:"2025-10-02",b:"2025-10-20",l:"전국대회 (아이치) 10.17~20",r:0},
+   {t:"fin",d:"2026-01-27",l:"대표 결정 57직종 64명",r:3}]},
+ {name:"프랑스",code:"fr",c:"var(--fr)",ev:[
+   {t:"bar",a:"2025-10-16",b:"2025-10-18",l:"전국결선 (마르세유)",r:0},
+   {t:"pt",d:"2025-10-20",l:"금메달리스트 예비선발",r:1},
+   {t:"bar",a:"2025-10-24",b:"2025-12-14",l:"우수센터 3주 선발 (정확일 미공개)",r:2},
+   {t:"fin",d:"2025-12-15",l:"대표팀 발표 32직종 36명",r:3},
+   {t:"pt",d:"2026-01-23",l:"합숙 1",r:0},
+   {t:"pt",d:"2026-04-23",l:"합숙 2",r:0},
+   {t:"pt",d:"2026-07-04",l:"합숙 3",r:0}]}
+];
+LANES.forEach((ln,i)=>{
+  const y0=T0+i*laneH, axisY=y0+62;
+  if(i>0) el('line',{x1:20,x2:R,y1:y0,y2:y0,class:'grid'});
+  const fg=el('svg',{x:20,y:axisY-7,width:21,height:14,viewBox:'0 0 30 20'});fg.innerHTML=flagInner(ln.code);el('rect',{x:20,y:axisY-7,width:21,height:14,fill:'none',stroke:'var(--line)'});
+  el('text',{x:48,y:axisY+5,class:'lane-lbl',fill:ln.c},ln.name);
+  el('line',{x1:L,x2:X(D('2026-09-23')),y1:axisY,y2:axisY,stroke:ln.c,'stroke-width':1.5,'stroke-opacity':.35});
+  // label rows: r0 above-high, r1 above-low, r2 below-high, r3 below-low
+  const ly=[axisY-36,axisY-16,axisY+28,axisY+48];
+  ln.ev.forEach(e=>{
+    let x;
+    if(e.t==='bar'){
+      const xa=X(D(e.a)), xb=Math.max(X(D(e.b)),xa+4); x=xa;
+      el('rect',{x:xa,y:axisY-5+(e.o||0)*0.8,width:xb-xa,height:e.o?7:10,rx:4,fill:ln.c,'fill-opacity':e.op||.85});
+    } else if(e.t==='fin'){
+      x=X(D(e.d));
+      el('path',{d:`M${x} ${axisY-9} L${x+9} ${axisY} L${x} ${axisY+9} L${x-9} ${axisY}Z`,fill:ln.c,stroke:'var(--surface)','stroke-width':1.5});
+    } else {
+      x=X(D(e.d));
+      el('circle',{cx:x,cy:axisY,r:5,fill:'var(--surface)',stroke:ln.c,'stroke-width':2.5});
+    }
+    const yy=ly[e.r];
+    el('line',{x1:x,x2:x,y1:e.r<2?yy+3:axisY+6,y2:e.r<2?axisY-6:yy-11,stroke:ln.c,'stroke-opacity':.35,'stroke-width':1});
+    const anchor = x>R-160?'end':'start';
+    const tx = anchor==='end'?x+2:x-2;
+    const t=el('text',{x:tx,y:yy,class:'ev-lbl','text-anchor':anchor},e.l);
+    if(e.t==='fin'){t.setAttribute('font-weight','700');t.setAttribute('fill',ln.c)}
+  });
+});
+
+// lead cards
+const LEAD=[
+ ["한국","var(--kr)","약 13~15","2025.6~8월 직종별 확정. 후보는 전국대회 1·2위, 확정 뒤 장기 맞춤훈련"],
+ ["중국","var(--cn)","약 5","2026.4.10~13 집중평가로 확정. 그 전부터 681명이 훈련, 예비선수 동반"],
+ ["일본","var(--jp)","약 8","2026.1.27 발표. 2025.10 전국대회 금상 원칙, 일부 직종은 별도 선발전"],
+ ["프랑스","var(--fr)","약 9","2025.12.15 발표. 전국결선 금메달리스트 예비선발 뒤 우수센터 3주 선발"]
+];
+document.getElementById('lead').innerHTML = LEAD.map(([n,c,m,p],i)=>`<div style="--c:${c}"><h3>${flag(['kr','cn','jp','fr'][i])}${n}</h3><span class="n">${m}<small> 개월 전 확정</small></span><p>${p}</p></div>`).join('');
+
+const CMP=[
+ {h:"선수",rows:[
+  ["선발 대상",
+   [`2년에 걸친 전국대회 직종별 1·2위 상위득점자를 후보로 등록 ${ref("K0")}`,
+    `지방대회 참가자는 전국대회에 해당자가 없을 때만 대상 ${ref("K0")}`,
+    `후보가 없거나 신규 직종이면 공개모집 선발 (2026: 사이버보안 등 12직종) ${ref("K2")}`],
+   [`제3회 전국직업기능대회(2025.9, 정저우) 개인 상위 10명·팀 상위 5팀 → 국가집훈팀 ${ref("C1")}`,
+    `제47회 평가 상위 미출전 적령자는 집훈팀 직행 ${ref("C1")}`],
+   [`제63회 전국대회(2025.10.17~20, 42직종) 금상 수상자 원칙 ${refs(["J1","J7"])}`,
+    `일본 국적, 국제대회 미출전 요건 ${ref("J1")}`,
+    `CNC 선반·밀링은 7명이 국제대회 조건의 별도 선발전 ${ref("J2")}`],
+   [`지역선발: 약 9,000명 등록 ${ref("F3")}`,
+    `전국결선: 2025.10.16~18 마르세유, 약 800명 ${ref("F3")}`,
+    `전국결선 금메달리스트를 대표팀 예비선발(pré-sélection) ${ref("F4")}`]],
+  ["연령",
+   [`WSI 공통: 대회 연도에 22세 이하 (그해 23세가 되면 불가) ${ref("W1")}`,
+    `사이버보안·정보통신망분배(Information Network Cabling)·메카트로닉스·Industry 4.0 등 12개 직종은 25세 이하 ${ref("W1")}`,
+    `2026 공모직종 공고: 2004.1.1 또는 2001.1.1 이후 출생 ${ref("K2")}`],
+   [`대부분 2004.1.1 이후 출생 ${ref("C1")}`,
+    `사이버보안 등 14개 종목은 2001.1.1 이후 출생 ${ref("C1")}`],
+   [`2026년에 22세 이하 (2004.1.1 이후 출생) ${ref("J1")}`,
+    `일부 직종 25세 이하 ${ref("J1")}`],
+   [`대회 연도에 23세 미만, 일부 직종 26세 미만 ${ref("F3")}`,
+    `WSI 기준과 같은 내용`]],
+  ["선발 규모",
+   [`50직종 56명 (고용노동부·언론 공식 발표) ${refs(["K3","K7"])}`,
+    `<small>WSI 회원 페이지는 49직종 54명으로 표기 ${ref("K5")}</small>`],
+   [`국가집훈팀 681명 ${ref("C2")}`,
+    `64직종 정선수 71명 + 예비선수 71명 ${ref("C5")}`,
+    `대표단 전체 220명 ${ref("C9")}`],
+   [`57직종 64명 결정 ${ref("J3")}`,
+    `실제 출전 56직종 62명 ${ref("J5")}`],
+   [`32직종 36명 ${ref("F1")}`]],
+  ["선발 방식",
+   [`평가경기 최고점자 중 인성검사·건강검진 결격 없는 자를 선발 ${ref("K0")}`,
+    `입상 가능성이 낮으면 미선발 가능, 대표 사고 시 차순위 교체 ${ref("K0")}`,
+    `2026 일반직종: 1차 2025.4.26~5.29, 2차 6.9~7.5 ${ref("K1")}`,
+    `과제는 15일·30일 전 공개 또는 비공개 ${ref("K1")}`,
+    `공모직종: 1차 7월, 2차 8월 ${ref("K2")}`],
+   [`기초훈련 후 2026.4.10~13 상하이 집중평가 ${refs(["C3","C7"])}`,
+    `1위 정선수, 2위 예비선수 ${ref("C3")}`,
+    `명단 발표 2026.5.13 ${ref("C5")}`],
+   [`금상 수상자 선발은 투명성·공정성 확보를 이유로 한 원칙 ${ref("J1")}`,
+    `국가 지침의 개선 방향: 최종선발 도입, 선발 시기 최적화, 면접 반영 ${ref("J4")}`],
+   [`메달 획득 뒤 WorldSkills France 우수훈련센터에서 3주 선발 ${refs(["F1","F7"])}`,
+    `2025.12.15 대표 확정(titularisation) ${ref("F1")}`,
+    `3주 선발의 평가 항목은 공개되지 않음`]]
+ ]},
+ {h:"코치진",rows:[
+  ["선정기준",
+   [`공개모집 → 국제 심의위원회 심의 → 위촉 ${ref("K0")}`,
+    `자격(별표6-1) 중 하나: 전국대회 심사위원 2회↑ 또는 국제지도위원 1회↑, 이공계 조교수↑, 해당분야 10년↑, 명장·기능장, 산업기사+10년, 국제대회 출전 후 3년↑, 전국대회 입상 후 10년↑ ${ref("K0")}`,
+    `어학·선수 지도관리 능력 고려 가능 ${ref("K0")}`,
+    `성과평가를 연임에 반영 가능 ${ref("K0")}`],
+   [`팀장은 중국조직위가 결정 ${ref("C3")}`,
+    `나머지는 팀장 제안 → 지역 주관부처 동의 → 집훈 시작 30일 내 조직위 승인 ${ref("C3")}`,
+    `기술전문가 해당분야 15년↑, 코치 8년↑ + 기사(技师)급↑ ${ref("C6")}`],
+   [`직종별 분과회가 복수 후보 중 선정 → 선수강화위원회 심사 → JAVADA 결정 ${ref("J4")}`,
+    `높은 기능 수준·지도력 ${ref("J4")}`,
+    `타국 엑스퍼트와 소통 능력, 중장기 연임 의욕 ${ref("J4")}`],
+   [`공개 지원 (온라인 양식·CV) ${ref("F2")}`,
+    `현업 전문가·훈련교사·기업인·교사·퇴직자 ${ref("F2")}`,
+    `교수·코칭, 프로젝트 관리, 영어, WorldSkills 경험(우대) ${ref("F2")}`,
+    `연간 평균 약 10주 투입 (기술준비 5주 + 대회 12일) ${ref("F2")}`]],
+  ["필요역량",
+   [`국제 심사·과제 출제 ${ref("K0")}`,
+    `훈련계획 수립·지도, 포럼 활동·정보수집 ${ref("K0")}`,
+    `훈련계획·지도일지·참가결과보고 제출 의무 ${ref("K0")}`],
+   [`훈련계획·평가과제 설계, 기술문서 정리 ${ref("C3")}`,
+    `팀장은 집훈 기간 1/4 이상 현장 지도, 팀원 업무 평가 ${ref("C3")}`,
+    `대회 후 30일 내 자료 제출 ${ref("C3")}`],
+   [`기능·지도력·국제 소통·어학 ${ref("J4")}`,
+    `선수·엑스퍼트 어학연수 지원 ${ref("J4")}`],
+   [`코칭·교수법·프로젝트 관리·영어 ${ref("F2")}`,
+    `Expert 교육과정 40일·280시간 (평가: 실제 선수 훈련계획 작성) ${ref("F5")}`]]
+ ]},
+ {h:"훈련",rows:[
+  ["지도방식",
+   [`국제지도위원이 후보 단계부터 훈련지도·정보제공 ${ref("K0")}`,
+    `대표 확정 후 훈련계획 수립·지도 ${ref("K0")}`,
+    `정기평가전 운영 ${ref("K0")}`],
+   [`총체방안 → 일상훈련 → 강화훈련 3단계 문서 ${ref("C3")}`,
+    `일일 집훈일지, 단계별 기술상태 분석 ${ref("C3")}`,
+    `역대 메달리스트가 후배를 지도하는 사례 ${ref("C8")}`],
+   [`중앙 강화위원회 아래 직종별 분과회 중심 ${ref("J4")}`,
+    `기업·학교·업계가 공동 지원 ${ref("J4")}`],
+   [`선수 1명 – Expert 1명 ${ref("F2")}`,
+    `Expert가 정선수(titulaire)와 예비선수(suppléant)의 준비를 모두 이끔 ${ref("F2")}`]],
+  ["대내/외 훈련",
+   [`한국위원회 합동강화훈련 ${ref("K0")}`,
+    `소속단체훈련 ${ref("K0")}`,
+    `국내외 전지훈련 ${ref("K0")}`,
+    `해외 선수 초청 친선경기 (2024 사례) ${ref("K6")}`],
+   [`253개 기관 375개 집훈기지 (주관·협력) ${ref("C4")}`,
+    `국제 전문가 초청 ${ref("C3")}`,
+    `온·오프라인 국제교류를 훈련계획에 반영 ${ref("C3")}`],
+   [`국내 합동훈련 확대 ${ref("J4")}`,
+    `선수·엑스퍼트·지도원·통역의 해외 기능경기대회 참가 ${ref("J4")}`,
+    `국내외 합동훈련 ${ref("J4")}`],
+   [`우수센터 직종별 기술훈련 4주 (일반 안내는 5~8주) ${refs(["F1","F6"])}`,
+    `팀 합숙 총 4회: 대회 전 1월·4월·7월 3회 + 대회 후 10월 1회 ${ref("F1")}`,
+    `국제훈련 경험 포함 ${ref("F1")}`]],
+  ["기술적 측면",
+   [`전국대회·국제대회·평가경기 과제와 국제지도위원 출제 과제 활용 ${ref("K0")}`,
+    `국제대회 지정 장비 구입·적응훈련 ${ref("K0")}`],
+   [`기초단계: 기능·전공이론 ${ref("C3")}`,
+    `강화단계: 최신 기술문서 기반, 실제 장비 조기 적응 ${ref("C3")}`,
+    `돌발사건 대응훈련 ${ref("C3")}`,
+    `심리·체력·영어 ${ref("C3")}`],
+   [`국제대회 실사용 장비·재료 확보 ${ref("J4")}`,
+    `과거 사고 사례 공유, 정신면 강화 ${ref("J4")}`,
+    `국내·국제 과제 정합화 ${ref("J4")}`],
+   [`스트레스·감정·수면·영양·체력 관리 ${ref("F1")}`,
+    `기업·교육기관 장비 활용 ${ref("F6")}`]]
+ ]}
+];
+
+const head = `<thead><tr><th>항목</th><th>${flag('kr')}한국</th><th>${flag('cn')}중국</th><th>${flag('jp')}일본</th><th>${flag('fr')}프랑스</th></tr></thead>`;
+
+// coaching org charts
+const N=(k,t,d,ch,o={})=>({k,t,d,ch:ch||[],...o});
+const ORGS=[
+ {code:'kr',name:'한국',c:'var(--kr)',sub:'국제지도위원 50 · 통역 50 (2026)',src:["K0","K4"],
+  note:'국제지도위원은 공개모집 후 국제 심의위원회 심의로 위촉하고, 임기는 차기 대회 기술위원 선정일까지입니다. 훈련지도 역량·성실도·입상성과 평가를 연임에 반영할 수 있습니다.',
+  tree:N('org','국제기능올림픽대회 한국위원회','회장이 기술위원 위촉',[
+    N('org','국제 심의위원회','국제지도위원 선정·연임·해촉, 선발 방식 심의'),
+    N('org','기술대표 · 기술부대표','국제대회 기술 업무 총괄, 부대표는 보좌·직무대행'),
+    N('coach','국제지도위원','직종별 1명 · WSI Expert. 훈련계획·지도, 평가과제·정기평가전, 국제 심사',[
+      N('coach','부지도위원','훈련지도 보좌, 훈련장 시설·재료 (위촉 가능)'),
+      N('sup','통역','직종별 배치'),
+      N('ply','국가대표 선수','50직종 56명')
+    ])
+  ])},
+ {code:'cn',name:'중국',c:'var(--cn)',sub:'직종별 전문가팀 10명 이내 × 64직종',src:["C3","C4","C6"],
+  note:'전문가팀장은 중국조직위가 정하고, 나머지는 팀장이 제안해 집훈 시작 30일 안에 조직위가 승인합니다. 통역을 빼면 같은 기관 출신은 2명까지입니다. 팀장은 팀원의 업무를 평가해 조직위에 보고합니다.',
+  tree:N('org','중국조직위 (中国组委会)','비서처 · 기술지원조 · 서비스보장조',[
+    N('org','주관 집훈부처 · 주관 집훈기지','협력기지 포함 253개 기관 375개 기지',[
+      N('coach','전문가팀장 (专家组长)','기술 방향·훈련계획·평가과제 총괄, 집훈 기간 1/4 이상 현장 지도',[
+        N('coach','기술전문가','훈련 지도, 평가과제 출제 참여'),
+        N('coach','코치장 (教练组长)','일상훈련 조직, 선수 상태 파악',[
+          N('coach','코치 (教练)','선수별 보완·향상 훈련, 집훈일지 지도',[
+            N('ply','정선수 1 · 예비선수 1','강화훈련을 함께 받음')
+          ])
+        ]),
+        N('sup','통역','기술문서·장비·채점기준 정리')
+      ],{group:true})
+    ])
+  ])},
+ {code:'jp',name:'일본',c:'var(--jp)',sub:'직종별 분과회 중심 공동 지원',src:["J4","J6"],
+  note:'엑스퍼트는 직종별 분과회가 복수 후보 중에서 고르고, 선수강화위원회 심사를 거쳐 JAVADA가 최종 결정합니다. 지침은 엑스퍼트와 지도원이 긴밀히 협력하도록 요구합니다.',
+  tree:N('org','후생노동성 · JAVADA (中央職業能力開発協会)','강화지침 수립 · WSI 가맹 대표, 엑스퍼트 최종 결정',[
+    N('org','선수강화위원회','상설, 강화 전문사항 검토 · 엑스퍼트 심사',[
+      N('org','직종별 분과회','기업·학교 관계자, 엑스퍼트, 지도원, 경기 주관기관',[
+        N('coach','엑스퍼트','국제대회 직종 운영, 국제 소통 · 다수 기업 소속'),
+        N('coach','지도원','국내 훈련 담당',[
+          N('ply','대표 선수','소속 기업·학교에서 훈련')
+        ]),
+        N('sup','통역','일·영 경기용어')
+      ])
+    ])
+  ])},
+ {code:'fr',name:'프랑스',c:'var(--fr)',sub:'선수 1명당 Expert 1명',src:["F1","F2","F5"],
+  note:'Expert métier는 공개 지원(CV)으로 모집하며, 연간 평균 약 10주를 투입합니다. WorldSkills France는 Expert용 40일·280시간 교육과정을 운영합니다.',
+  tree:N('org','WorldSkills France','대표팀 운영, 훈련·합숙 비용 지원',[
+    N('sup','중앙 지원조직','기술대표 · 팀리더 · 체력·멘탈 트레이너 · MSO(전직 국제대회 선수)'),
+    N('coach','Expert métier','선수별 개인 코치 · 준비 프로젝트 책임자 · 국제 심사',[
+      N('coach','직종 기술팀','전직 선수 · 현업 전문가'),
+      N('ply','정선수 · 예비선수','titulaire · suppléant')
+    ]),
+    N('org','우수훈련센터','Centres d\'excellence, 장비·전문인력')
+  ])}
+];
+const nodeHTML=n=>`<li><div class="node k-${n.k==='ply'?'ply':n.k}${n.group?' group':''}"><b>${n.t}</b><span>${n.d}</span>${n.group?'<em>전문가팀 (통상 10명 이내)</em>':''}</div>${n.ch.length?`<ul>${n.ch.map(nodeHTML).join('')}</ul>`:''}</li>`;
+const ORG_HTML = `<div class="org-legend" aria-label="조직도 범례"><span><i style="background:var(--muted)"></i>기관·위원회</span><span><i style="background:var(--accent)"></i>코치·전문가 (국가색)</span><span><i style="background:var(--sup)"></i>지원 인력</span><span><i style="background:var(--ply)"></i>선수</span></div>
+<div class="orgs">${ORGS.map(o=>`<div class="org" style="--c:${o.c}"><div class="org-head">${flag(o.code)}${o.name}<small>${o.sub} · ${refs(o.src)}</small></div><div class="org-body"><ul class="tree">${nodeHTML(o.tree)}</ul></div><p class="org-note">${o.note}</p></div>`).join('')}</div>`;
+
+document.getElementById('cmp').innerHTML = CMP.map(g=>`<h3 style="margin:14px 0 10px">${g.h}</h3>${g.h==='코치진'?ORG_HTML+'<div style="height:12px"></div>':''}<div class="scroll"><table class="cmp">${head}<tbody>${g.rows.map(r=>`<tr>${r.map(c=>`<td>${Array.isArray(c)?`<ul class="bl">${c.map(x=>`<li>${x}</li>`).join('')}</ul>`:c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`).join('');
+
+// sources
+document.getElementById('srcs').innerHTML = Object.entries(SRC).map(([k,[t,u]])=>`<li><b>${k}</b><span>${u?`<a href="${u}" target="_blank" rel="noopener">${t}</a>`:t}</span></li>`).join('');
+</script>
+
+</body></html>
